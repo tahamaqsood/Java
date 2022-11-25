@@ -4,29 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3"
-    android:orientation="vertical"
-    android:padding="40dp"
+    tools:context=".SplashActivity"
+    android:background="@color/black"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:gravity="center"
     >
-
-
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:id="@+id/logout"
-        android:gravity="right">
-
-    </TextView>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome back!">
-    </TextView>
+        android:gravity="center"
+        android:textSize="198dp"
+        android:textFontWeight="900"
+        android:text="S"
+        android:fontFamily="serif"
+        android:textColor="@color/white"
+        ></TextView>
 
 
 </LinearLayout>

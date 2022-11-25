@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="98dp"
+        android:textFontWeight="900"
+        android:text="S"
+        android:paddingTop="139px"
+        android:fontFamily="serif"
+        android:textColor="@color/black"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Shopertino"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:paddingTop="9dp"
+        android:gravity="center"
+        android:textFontWeight="900"
+        android:fontFamily="sans-serif"
+        ></TextView>
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:paddingTop="10px"
+        android:textAlignment="center"
+        android:text="Shop &amp; get updates on new products, promotions and sales with our new mobile app."
+        ></TextView>
+
+    <Button
+        android:layout_width="710px"
+        android:layout_height="wrap_content"
+        android:text="Log in"
+        android:layout_marginTop="149dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:textFontWeight="800"
+        android:id="@+id/loginfrommain"
+        android:backgroundTint="@color/black"
+    >
+    </Button>
+    <Button
+        android:layout_width="710px"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="sans-serif"
+        android:textFontWeight="800"
+        android:id="@+id/signupfrommain"
+        ></Button>
+
+
+</LinearLayout>

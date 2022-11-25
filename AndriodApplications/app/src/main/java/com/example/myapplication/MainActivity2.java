@@ -48,44 +48,105 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 String fname = name.getText().toString();
                 String fpass = pass.getText().toString();
-
-                String Url = "http://192.168.0.105:80/java/login.php";
-
+                String URL = "http://192.168.0.105:80/java/login.php";
 
                 RequestQueue requestQueue = Volley.newRequestQueue(MainActivity2.this);
 
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, Url, new Response.Listener<String>() {
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
                         if(response.equals("ok")){
-                            Toast.makeText(MainActivity2.this,"You're successfully logged in.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity2.this, "You're successfully logged on", Toast.LENGTH_SHORT).show();
+                      Intent i = new Intent(getApplicationContext(),MainActivity3.class);
+                      startActivity(i);
+                        }else {
+                            Toast.makeText(MainActivity2.this, "Login Credentials Are Not Correct!", Toast.LENGTH_SHORT).show();
 
-                            Intent i = new Intent(getApplicationContext(),MainActivity3.class);
-                            startActivity(i);
-                        }else{
-                            Toast.makeText(MainActivity2.this,"Incorrect login password." + response,Toast.LENGTH_LONG).show();
                         }
-
-
-
                     }
-                }, error -> {
-                    Toast.makeText(MainActivity2.this,"" + error , Toast.LENGTH_LONG).show();
-                }) {
-
+                },error -> {
+                    Toast.makeText(MainActivity2.this, "" + error, Toast.LENGTH_SHORT).show();
+                }){
                     @Override
-                    protected Map<String, String> getParams() {
+                    protected Map<String, String> getParams (){
                         Map<String, String> params = new HashMap<String, String>();
 
-                        params.put("username", fname);
-                        params.put("password", fpass);
+                        params.put("username",fname);
+                        params.put("password",fpass);
                         return params;
+
                     }
+
                 };
                 requestQueue.add(stringRequest);
+
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        submit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String fname = name.getText().toString();
+//                String fpass = pass.getText().toString();
+//
+//                String Url = "http://192.168.0.105:80/java/login.php";
+//
+//
+//                RequestQueue requestQueue = Volley.newRequestQueue(MainActivity2.this);
+//
+//                StringRequest stringRequest = new StringRequest(Request.Method.POST, Url, new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//
+//                        if(response.equals("ok")){
+//                            Toast.makeText(MainActivity2.this,"You're successfully logged in.",Toast.LENGTH_LONG).show();
+//
+//                            Intent i = new Intent(getApplicationContext(),MainActivity3.class);
+//                            startActivity(i);
+//                        }else{
+//                            Toast.makeText(MainActivity2.this,"Incorrect login password." + response,Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//                }, error -> {
+//                    Toast.makeText(MainActivity2.this,"" + error , Toast.LENGTH_LONG).show();
+//                }) {
+//
+//                    @Override
+//                    protected Map<String, String> getParams() {
+//                        Map<String, String> params = new HashMap<String, String>();
+//
+//                        params.put("username", fname);
+//                        params.put("password", fpass);
+//                        return params;
+//                    }
+//                };
+//                requestQueue.add(stringRequest);
+//            }
+//        });
 
 
 
