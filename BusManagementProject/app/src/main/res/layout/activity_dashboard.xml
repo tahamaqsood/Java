@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    tools:ignore="HardcodedText"
+    tools:context=".dashboardActivity"
+    >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:bottomRightRadius="30dp"
+                android:bottomLeftRadius="30dp"
+                android:topLeftRadius="30dp"
+                android:topRightRadius="30dp"
+                android:background="@drawable/background"
+                >
+
+                <TextView
+                    style="@style/viewParent.headerText.NoMode"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="150dp"
+                    android:textSize="20sp"
+                    android:text="Chose where do you want to go. And see the options below"
+
+                    android:textColor="@color/whiteTextColor"/>
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/secondbus" />
+            </RelativeLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputEmail"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+                <EditText
+                    android:id="@+id/c_location"
+                    style="@style/modifiedEditText"
+                    android:hint="Current Location"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPassword"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+                <EditText
+                    android:id="@+id/d_location"
+                    style="@style/modifiedEditText"
+                    android:hint="Destination"
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+                android:id="@+id/cirLoginButton"
+                style="@style/loginButton"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="Search"
+                app:initialCornerAngle="27dp"
+                app:spinning_bar_color="#FFF"
+                app:spinning_bar_padding="6dp"
+                app:spinning_bar_width="4dp" />
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal">
+            <ListView
+                android:id="@+id/listViewFrom"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" />
+
+                <ListView
+                    android:id="@+id/listViewTo"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true" />
+                <ListView
+                    android:id="@+id/listViewBus"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true" />
+            </LinearLayout>
+
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:id="@+id/recyclerView"-->
+<!--                >-->
+
+<!--            </androidx.recyclerview.widget.RecyclerView>-->
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/whiteTextColor"
+                        app:cardCornerRadius="40dp"
+                        app:cardElevation="2dp"
+                        app:cardMaxElevation="2dp"
+                        android:layout_margin="4dp"
+                        android:textAlignment="textStart"
+                        android:id="@+id/hiderCard"
+                        >
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|left"
+                            android:textAlignment="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="@color/whiteTextColor"
+                            android:textSize="14sp"
+                            android:background="@drawable/backgroundforcards"
+                            android:textStyle="bold"
+                            android:text="From:"/>
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="@color/whiteTextColor"
+                            android:textSize="14sp"
+                            android:background="@drawable/backgroundforcards"
+                            android:textStyle="bold"
+                            android:text="To:"/>
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:textAlignment="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="@color/whiteTextColor"
+                            android:textSize="14sp"
+                            android:background="@drawable/backgroundforcards"
+                            android:textStyle="bold"
+                            android:text="Bus:"/>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/whiteTextColor"
+                        app:cardCornerRadius="40dp"
+                        app:cardElevation="2dp"
+                        app:cardMaxElevation="2dp"
+                        android:layout_margin="4dp"
+                        android:textAlignment="textStart"
+                        android:id="@+id/mainCard"
+                        >
+
+                        <TextView
+                            android:id="@+id/cardIDFROM"
+                            android:layout_width="115dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|left"
+                            android:textAlignment="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="@color/themeColor"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/cardIDTO"
+                            android:layout_width="114dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="@color/themeColor"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/cardIDBUS"
+                            android:layout_width="115dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:textAlignment="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="@color/themeColor"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+</RelativeLayout>
